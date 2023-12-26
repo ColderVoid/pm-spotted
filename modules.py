@@ -4,9 +4,9 @@
 #
 
 import os
-required = ["django", "djangorestframework"]
+required = ["django", "djangorestframework", "django-resized"]
 
-if (os.name == "NT"): #Windows
+if (os.name == "NT"): #Windows, not tested yet
     for package in required:
         os.system(f"pip install {package}")
 else: #Linux
