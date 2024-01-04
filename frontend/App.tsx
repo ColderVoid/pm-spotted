@@ -88,20 +88,21 @@ const styles = StyleSheet.create({
   darkScreen: {
     backgroundColor: '#222222',
     flex: 1,
+    color: 'white',
   },
   whiteScreen: {
     backgroundColor: '#FFFFFF',
     flex: 1,
+    color: 'black',
   },
   // górna część apki
   top_container: {
     flexDirection: 'row',
     paddingHorizontal: 10,
-    marginTop: 2,
+    marginTop: 5,
     height: 30,
   },
   heading: {
-    color: '#FFFFFF',
       fontSize: 24,
       letterSpacing: 1,
       paddingRight: '25%',
