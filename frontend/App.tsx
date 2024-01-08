@@ -1,8 +1,10 @@
-import { SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native'
-import React from 'react'
-
+import { FlatList, SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native'
+import React,  { useEffect, useState } from 'react'
+import api from "./api.tsx"
+import Posts from './api.tsx'
 export default function App(): JSX.Element {
   const isDarkMode = useColorScheme() === 'dark'
+
   return (
     <SafeAreaView style={isDarkMode ? styles.darkScreen : styles.whiteScreen}>
         <View style = {styles.top_container}>
@@ -26,6 +28,7 @@ export default function App(): JSX.Element {
           </View>
         </View>
         <ScrollView>
+          {/* <Posts/> */}
           <View style = {styles.con_post}>
             <View style = {styles.post_prof_pic}>
               <Text>Zdu</Text>
@@ -35,7 +38,6 @@ export default function App(): JSX.Element {
                 <Text style = {styles.header_content}>Imię i Nazwisko, Kierunek, Rok</Text>
               </View>
               <View style = {styles.post_content}>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec feugiat mauris. Duis a iaculis ex</Text>
               </View>
               <View style = {styles.con_action_bar}>
                 <View style = {styles.action_bar}>
