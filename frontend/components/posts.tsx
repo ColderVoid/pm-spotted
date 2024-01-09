@@ -1,61 +1,97 @@
-import { StyleSheet, View, Text, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, ScrollView, Image } from 'react-native'
 import React from 'react'
+import Api from './api.tsx'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHeart, faComment, faEllipsis} from '@fortawesome/free-solid-svg-icons'
 
 export default function head() {
     return (
         <ScrollView>
           <View style = {styles.con_post}>
-            <View style = {styles.post_prof_pic}>
-              <Text>Zdu</Text>
+          <View style = {styles.post_prof_pic}>
+              <Image source={require('../media/user2.png')}
+              style={{width: 50, height: 50}}/>
             </View>
             <View style = {styles.wiad}>
               <View style = {styles.post_header}>
-                <Text style = {styles.header_content}>Imię i Nazwisko, Kierunek, Rok</Text>
+                <Text style = {styles.header_content}>Kasia Nowak, Informatyka, I</Text>
               </View>
               <View style = {styles.post_content}>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec feugiat mauris. Duis a iaculis ex</Text>
+                <Text>Hej #PMspotted! Chciałam podziękować tajemniczemu dobrze ubranemu programiście, który zawsze ratuje mi skórę na wykładach z algorytmów! Bez niego bym pewnie już dawno zemdlała przy tym kodzie. Ktoś wie, kto to może być? 💻👩‍💻 #ŻycieNaInformatyce</Text>
               </View>
               <View style = {styles.con_action_bar}>
                 <View style = {styles.action_bar}>
                   <View style = {styles.reaction_icon}>
-                    <Text>r</Text>
+                    <FontAwesomeIcon icon={faHeart} color="white"/>
                   </View>
                  <View style = {styles.comment_icon}>
-                    <Text>Com</Text>
+                    <FontAwesomeIcon icon={faComment} color='#003d76'/>
                   </View>
                   <View style = {styles.more_icon}>
-                    <Text>...</Text>
+                    <FontAwesomeIcon icon={faEllipsis} color="white"/>
                   </View>
                 </View>
               </View>
             </View>
           </View>
+
           <View style = {styles.con_post}>
             <View style = {styles.post_prof_pic}>
-              <Text>Zdu</Text>
+              <Image source={require('../media/user3.png')}
+              style={{width: 50, height: 50}}/>
             </View>
             <View style = {styles.wiad}>
               <View style = {styles.post_header}>
-                <Text style = {styles.header_content}>Imię i Nazwisko, Kierunek, Rok</Text>
+                <Text style = {styles.header_content}>Tomasz Wójcik, Zarządzanie i Inżynieria Produkcji, III</Text>
               </View>
               <View style = {styles.post_content}>
-                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut placerat diam eget ipsum bibendum, eget placerat dolor lobortis. Morbi id enim orci. Sed laoreet odio quis nibh lacinia, vel finibus massa pretium. Nam maximus viverra porttitor. Aenean semper commodo massa fringilla vestibulum. Vivamus nisl odio, interdum ac sapien non, scelerisque rhoncus erat. Etiam finibus porta eros sed viverra. Praesent interdum pharetra vehicula. Praesent ac turpis dictum, tristique metus molestie, eleifend purus. Integer et velit pharetra, molestie nunc ut, aliquam purus. Nullam quis ex ut turpis hendrerit pulvinar.</Text>
+                <Text>Cześć #PMspotted! Dziś spotkałem kogoś na korytarzu, kto świetnie zorganizował prezentację na seminariach z zarządzania projektami. Chciałbym się dowiedzieć, kto to był, bo chciałbym podziękować za ciekawą i pouczającą prezentację! 📊🙌 #ZarządzanieProdukcją</Text>
               </View>
               <View style = {styles.con_action_bar}>
                 <View style = {styles.action_bar}>
                   <View style = {styles.reaction_icon}>
-                    <Text>r</Text>
+                    <FontAwesomeIcon icon={faHeart} color="white"/>
                   </View>
                  <View style = {styles.comment_icon}>
-                    <Text>Com</Text>
+                    <FontAwesomeIcon icon={faComment} color='#003d76'/>
                   </View>
                   <View style = {styles.more_icon}>
-                    <Text>...</Text>
+                    <FontAwesomeIcon icon={faEllipsis} color="white"/>
                   </View>
                 </View>
               </View>
             </View>
           </View>
+
+          <View style = {styles.con_post}>
+          <View style = {styles.post_prof_pic}>
+              <Image source={require('../media/user1.png')}
+              style={{width: 50, height: 50}}/>
+            </View>
+            <View style = {styles.wiad}>
+              <View style = {styles.post_header}>
+                <Text style = {styles.header_content}>Marta Szymańska, Psychologia, II</Text>
+              </View>
+              <View style = {styles.post_content}>
+                <Text>Hej #PMspotted! Dzisiaj miałam sesję z psychologii klinicznej, a moja koleżanka z roku okazała się niesamowicie pomocna i zrozumiała. Ktoś zna Paulinę Kowalską z semestru 4? Chciałabym jej osobiście podziękować za wsparcie! 🧠💙 #PsychologiaUczelni</Text>
+              </View>
+              <View style = {styles.con_action_bar}>
+                <View style = {styles.action_bar}>
+                  <View style = {styles.reaction_icon}>
+                    <FontAwesomeIcon icon={faHeart} color="white"/>
+                  </View>
+                 <View style = {styles.comment_icon}>
+                    <FontAwesomeIcon icon={faComment} color='#003d76'/>
+                  </View>
+                  <View style = {styles.more_icon}>
+                    <FontAwesomeIcon icon={faEllipsis} color="white"/>
+                  </View>
+                </View>
+              </View>
+            </View>
+          </View>
+
+          <Api/>
         </ScrollView>
     )
 }
@@ -72,16 +108,34 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         borderWidth: 1,
         borderRadius: 10,
-        width: '85%'
+        width: '80%',
+
+        borderColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
       },
       post_prof_pic: {
-        height: 30,
-        width: 30,
+        height: 50,
+        width: 50,
         marginTop: 1,
         marginLeft: 3,
-        borderWidth: 2,
-        borderRadius: 60,
-        borderColor: 'white'
+        // borderWidth: 2,
+        // borderRadius: 60,
+
+        //Piotrek
+        borderColor: 'white',
+        shadowColor: "#000",
+        shadowOffset: {
+          width: 0,
+          height: 2,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
       },
       post_header: {
         padding: 5,
@@ -108,28 +162,34 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
       },
       reaction_icon: {
-        backgroundColor: 'blue',
-        width: 20,
-        height: 20,
-        borderWidth: 2,
-        borderRadius: 60,
-        borderColor: 'white',
-        margin: 5
-      },
-      comment_icon: {
-        backgroundColor: 'blue',
-        width: 20,
-        height: 20,
-        borderWidth: 2,
+        backgroundColor: '#003d76',
+        borderWidth: 1,
         borderRadius: 60,
         borderColor: 'white',
         margin: 5,
+
+        //Piotrek
+        width: 25,
+        height: 25,
+        padding: 3
+      },
+      comment_icon: {
+        backgroundColor: 'white',
+        borderWidth: 1,
+        borderRadius: 60,
+        borderColor: '#003d76',
+        margin: 5,
+
+        //Piotrek
+        width: 25,
+        height: 25,
+        padding: 3
       },
       more_icon: {
-        backgroundColor: 'blue',
+        backgroundColor: '#003d76',
         width: 20,
         height: 20,
-        borderWidth: 2,
+        borderWidth: 1,
         borderRadius: 60,
         borderColor: 'white',
         marginTop: 5,

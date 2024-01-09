@@ -1,27 +1,31 @@
-import { StyleSheet, View, Text, SafeAreaView } from 'react-native'
+import { StyleSheet, View, Text, SafeAreaView, Image } from 'react-native'
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHouse, faBell, faEnvelope, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
 
 export default function head() {
     return (
         <View>
             <View style = {styles.top_container}>
-                    <Text style = {styles.heading}>PM SPOTTED</Text>
+                <Image source={require('../media/pm.png')}
+                style={{width: 200, height: 40}}
+                />
                     <View style = {styles.lupka}>
-                        <Text>lupka</Text>
+                      <FontAwesomeIcon icon={faMagnifyingGlass} size={24} color="white"/>
                     </View>
                     <View style = {styles.profil}>
-                        <Text>prof</Text>
+                      <FontAwesomeIcon icon={faUser} size={24} mask="circle" color="white"/>
                     </View>
                 </View>
                 <View style = {styles.con_zakladki}>
                     <View style = {[styles.zakladki_home, styles.zakladki]}>
-                        <Text>a</Text>
+                      <FontAwesomeIcon icon={faHouse} size={24} color="white"/>
                     </View>
                 <View style = {[styles.zakladki_notifications, styles.zakladki]}>
-                    <Text>a</Text>
+                    <FontAwesomeIcon icon={faBell} size={24} color="white"/>
                 </View>
                 <View style = {[styles.zakladki_mail, styles.zakladki]}>
-                    <Text>a</Text>
+                <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
                 </View>
             </View>
         </View>

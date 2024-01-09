@@ -1,5 +1,11 @@
 import React, { useEffect, useState} from 'react';
 import  { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faThumbsUp, faComment, faEllipsis, faHeart} from '@fortawesome/free-solid-svg-icons'
+
+
+const ip = "192.168.1.52" //IP adress of backend
+const port = "8000" //Port of backend
 
 const Posts = () => {
   const [posts, setPosts] = useState([]);
@@ -7,7 +13,7 @@ const Posts = () => {
 
   useEffect(() => {
     // Pobranie wszystkich postów
-    fetch('http://192.168.1.52:8000/posts/?format=json')
+    fetch(`http://${ip}:${port}/posts/?format=json`)
       .then(response => response.json())
       .then(postsData => {
         // Zapisanie wszystkich postów
@@ -15,7 +21,7 @@ const Posts = () => {
 
         // Pobranie danych użytkownika dla każdego postu
         const promises = postsData.map(post => {
-          return fetch(`http://192.168.1.52:8000/users/${post.user}/?format=json`)
+          return fetch(`http://${ip}:${port}/users/${post.user}/?format=json`)
             .then(userResponse => userResponse.json());
         });
 
@@ -60,20 +66,21 @@ return (
             </View>
             <View style={styles.con_action_bar}>
               <View style={styles.action_bar}>
+                
+                <View style={styles.reaction_icon}>
+                  <FontAwesomeIcon icon={faHeart} color="white"/>
+                </View>
                 <View>
                     <Text>{post.like_count}</Text>
                   </View>
-                <View style={styles.reaction_icon}>
-                  <Text>r</Text>
+                <View style={styles.comment_icon}>
+                  <FontAwesomeIcon icon={faComment} color='#003d76'/>
                 </View>
                 <View>
                     <Text>{post.comment_count}</Text>
                   </View>
-                <View style={styles.comment_icon}>
-                  <Text>Com</Text>
-                </View>
                 <View style={styles.more_icon}>
-                  <Text>...</Text>
+                <FontAwesomeIcon icon={faEllipsis} color="white"/>
                 </View>
               </View>
             </View>
@@ -90,67 +97,10 @@ return (
 export default Posts;
 
 const styles = StyleSheet.create({
-  // ogólny motyw apki, potem do zmiany pod przycisk w ustawieniach
-  darkScreen: {
-    backgroundColor: '#222222',
-    flex: 1,
-    color: 'white',
-  },
-  whiteScreen: {
-    backgroundColor: '#FFFFFF',
-    flex: 1,
-    color: 'black',
-  },
-  // górna część apki
-  top_container: {
-    flexDirection: 'row',
-    paddingHorizontal: 10,
-    marginTop: 5,
-    height: 30,
-  },
-  heading: {
-      fontSize: 24,
-      letterSpacing: 1,
-      paddingRight: '25%',
-  },
-  lupka: {
-    backgroundColor: 'green',
-
-    width: 50,
-    marginRight: '3%'
-  },
-  profil: {
-    backgroundColor: 'green',
-    width: 50,
-  },
-  con_zakladki: {
-    flexDirection: 'row',
-    marginTop: 2
-  },
-  zakladki: {
-    width: '33%',
-    alignItems: 'center',
-    justifyContent: 'center',
-    flex: 1,
-    height: 50
-  },
-  zakladki_home: {
-    borderBottomColor: 'blue',
-    borderBottomWidth: 3
-
-  },
-  zakladki_notifications: {
-    borderBottomColor: 'white',
-    borderBottomWidth: 1
-  },
-  zakladki_mail: {
-    borderBottomColor: 'white',
-    borderBottomWidth: 1
-  },
   con_post: {
     marginTop: 20,
     flex: 1,
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   wiad: {
     marginLeft: 10,
@@ -158,20 +108,37 @@ const styles = StyleSheet.create({
     borderColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
-    width: '85%'
+    width: '80%',
+
+    borderColor: 'white',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   post_prof_pic: {
-    height: 30,
-    width: 30,
+    height: 50,
+    width: 50,
     marginTop: 1,
     marginLeft: 3,
-    borderWidth: 2,
-    borderRadius: 60,
-    borderColor: 'white'
+    // borderWidth: 2,
+    // borderRadius: 60,
+
+    //Piotrek
+    borderColor: 'white',
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   post_header: {
     padding: 5,
-    
   },
   header_content: {
     fontSize: 18,
@@ -195,31 +162,38 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   reaction_icon: {
-    backgroundColor: 'blue',
-    width: 20,
-    height: 20,
-    borderWidth: 2,
-    borderRadius: 60,
-    borderColor: 'white',
-    margin: 5
-  },
-  comment_icon: {
-    backgroundColor: 'blue',
-    width: 20,
-    height: 20,
-    borderWidth: 2,
+    backgroundColor: '#003d76',
+    borderWidth: 1,
     borderRadius: 60,
     borderColor: 'white',
     margin: 5,
+
+    //Piotrek
+    width: 25,
+    height: 25,
+    padding: 3
+  },
+  comment_icon: {
+    backgroundColor: 'white',
+    borderWidth: 1,
+    borderRadius: 60,
+    borderColor: '#003d76',
+    margin: 5,
+
+    //Piotrek
+    width: 25,
+    height: 25,
+    padding: 3
   },
   more_icon: {
-    backgroundColor: 'blue',
+    backgroundColor: '#003d76',
     width: 20,
     height: 20,
-    borderWidth: 2,
+    borderWidth: 1,
     borderRadius: 60,
     borderColor: 'white',
-    marginLeft: '70%',
-    marginTop: 5
+    marginTop: 5,
+    right: 0,
+    position: 'absolute'
   },
 })
