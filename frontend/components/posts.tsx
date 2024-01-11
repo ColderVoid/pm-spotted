@@ -4,9 +4,9 @@ import Api from './api.tsx'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHeart, faComment, faEllipsis} from '@fortawesome/free-solid-svg-icons'
 
-export default function head() {
+export default function Posts() {
     return (
-        <ScrollView>
+        <ScrollView style= {{backgroundColor:'#333333'}}>
           <View style = {styles.con_post}>
           <View style = {styles.post_prof_pic}>
               <Image source={require('../media/user2.png')}
@@ -91,7 +91,7 @@ export default function head() {
             </View>
           </View>
 
-          <Api/>
+          {/* <Api/> */}
         </ScrollView>
     )
 }
@@ -109,8 +109,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         width: '80%',
-
-        borderColor: 'white',
         shadowColor: "#000",
         shadowOffset: {
           width: 0,

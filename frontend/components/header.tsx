@@ -1,7 +1,8 @@
-import { StyleSheet, View, Text, SafeAreaView, Image } from 'react-native'
+import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity, Button } from 'react-native'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHouse, faBell, faEnvelope, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
+
 
 export default function head() {
     return (
@@ -18,11 +19,11 @@ export default function head() {
                     </View>
                 </View>
                 <View style = {styles.con_zakladki}>
-                    <View style = {[styles.zakladki_home, styles.zakladki]}>
+                    <View  style = {[styles.zakladki_home, styles.zakladki]}>
                       <FontAwesomeIcon icon={faHouse} size={24} color="white"/>
                     </View>
                 <View style = {[styles.zakladki_notifications, styles.zakladki]}>
-                    <FontAwesomeIcon icon={faBell} size={24} color="white"/>
+                  <FontAwesomeIcon icon={faBell} size={24} color="white"/>
                 </View>
                 <View style = {[styles.zakladki_mail, styles.zakladki]}>
                 <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingHorizontal: 10,
     marginTop: 2,
-    height: 30,
+    height: 50,
     width: '100%',
   },
   heading: {
@@ -62,7 +63,6 @@ const styles = StyleSheet.create({
   },
   con_zakladki: {
     flexDirection: 'row',
-    marginTop: 2
   },
   zakladki: {
     width: '33%',
