@@ -11,6 +11,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function App(): JSX.Element {
   return (
     <NavigationContainer>
+      <Head/>
       <Tab.Navigator 
         initialRouteName='Home'
         screenOptions={{
@@ -18,6 +19,7 @@ export default function App(): JSX.Element {
           tabBarStyle: {
             display: 'none'
           }}}>
+            
           <Tab.Screen name="Home" component={HomeScreen}/>
           <Tab.Screen name="Notifications" component={Nots}/>
       </Tab.Navigator>
@@ -28,7 +30,6 @@ export default function App(): JSX.Element {
 function HomeScreen() {
   return(
     <SafeAreaView style = {{backgroundColor: '#333333', flex: 1}}>
-      <Head/>
       <Post/>
     </SafeAreaView>
   )
