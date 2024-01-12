@@ -1,0 +1,85 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/FuturaLT-Bold.ttf",
+      "sha1": "69fe30403a72f8432b723d70677e02760af30fba"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-BoldOblique.ttf",
+      "sha1": "921525a6c111f4adac3cc83ce4f0bed4cab1e3ee"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-Book.ttf",
+      "sha1": "b0b6819879edf3568c35472c987cb8d1bce4a027"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-BookOblique.ttf",
+      "sha1": "0913ee979782544f35d143f1b702c03953b55317"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-Condensed.ttf",
+      "sha1": "293458a0d24487a1b6a9eb1d8a06f65f96ac4f06"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedBold.ttf",
+      "sha1": "03561bb0662ddd84d66eee21f2b2250650c28141"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedBoldOblique.ttf",
+      "sha1": "b47a99089aa224fd0b6debd0d9423af21420057c"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedExtraBold.ttf",
+      "sha1": "bffdd0b01d47e1b65fff3bdef6ad481e988e09ae"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedLight.ttf",
+      "sha1": "79458a2b30798c215255830c82e4d862f143b0d2"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedLightObl.ttf",
+      "sha1": "c4736848671539b704b428827a3a57ddb13fa3a8"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondensedOblique.ttf",
+      "sha1": "8b80984a6ca5b2ba26a608b41eb1a4d0922cd1a1"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-CondExtraBoldObl.ttf",
+      "sha1": "8377cf9cc5201cefbcc76caaf79ed091b41d046e"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-ExtraBold.ttf",
+      "sha1": "f8b6c09613ee318a2a25031753d9c9af921aaef7"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-ExtraBoldOblique.ttf",
+      "sha1": "391bf2e6287e084b62a4a18dfdae480ba49d40ae"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-Heavy.ttf",
+      "sha1": "00637be0663dd1ee44852c36ca737fa72dbc3419"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-HeavyOblique.ttf",
+      "sha1": "3607a6dc3091157a12f9c242070a84be0f82c29e"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-Light.ttf",
+      "sha1": "ffb3afc6beefb44d2c59601de7a05483518531ac"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-LightOblique.ttf",
+      "sha1": "bbde976d92f78bc20458b37df905856fc1f60a33"
+    },
+    {
+      "path": "assets/fonts/FuturaLT-Oblique.ttf",
+      "sha1": "14c5d6fc1753e0d065c2217570feccb8159cdaf3"
+    },
+    {
+      "path": "assets/fonts/FuturaLT.ttf",
+      "sha1": "90cf3231e5a1ddde16a26e460199ffc5f3c5925a"
+    }
+  ]
+}

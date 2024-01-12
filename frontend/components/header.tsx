@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity, Button } from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity, Button } from 'react-native'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHouse, faBell, faEnvelope, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
@@ -31,8 +31,8 @@ export default function head() {
                   </TouchableOpacity>
                 </View>
                 <View style = {[styles.zakladki_mail, styles.zakladki]}>
-                  <TouchableOpacity>
-                    <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
+                <TouchableOpacity onPress={()=>{navigation.navigate('News');}}>
+                  <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
                   </TouchableOpacity>
                 </View>
             </View>
@@ -42,7 +42,7 @@ export default function head() {
 
 const styles = StyleSheet.create({
     // górna część apki
-  top_container: {
+    top_container: {
     flexDirection: 'row',
     paddingHorizontal: 10,
     marginTop: 4,

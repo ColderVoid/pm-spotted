@@ -5,6 +5,7 @@ import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs
 import Head from './components/header.tsx'
 import Post from './components/posts.tsx'
 import Notss from './components/notifications.tsx'
+import News from './components/news.tsx'
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -17,11 +18,13 @@ export default function App(): JSX.Element {
         screenOptions={{
           tabBarShowLabel: false,
           tabBarStyle: {
-            display: 'none'
+            display: 'none',
+            
           }}}>
             
           <Tab.Screen name="Home" component={HomeScreen}/>
           <Tab.Screen name="Notifications" component={Nots}/>
+          <Tab.Screen name="News" component={Newss}/>
       </Tab.Navigator>
     </NavigationContainer>
   )
@@ -38,5 +41,11 @@ function HomeScreen() {
 function Nots() {
   return (
     <Notss/>
+  )
+}
+
+function Newss() {
+  return (
+    <News/>
   )
 }
