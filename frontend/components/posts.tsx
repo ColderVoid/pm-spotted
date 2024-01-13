@@ -6,11 +6,11 @@ import { faHeart, faComment, faEllipsis} from '@fortawesome/free-solid-svg-icons
 
 export default function Posts() {
     return (
-        <ScrollView style= {{backgroundColor:'#333333'}}>
+        <ScrollView style= {{backgroundColor:'#262626'}}>
           <View style = {styles.con_post}>
           <View style = {styles.post_prof_pic}>
               <Image source={require('../media/user2.png')}
-              style={{width: 50, height: 50}}/>
+              style={styles.avatarimage}/>
             </View>
             <View style = {styles.wiad}>
               <View style = {styles.post_header}>
@@ -38,7 +38,7 @@ export default function Posts() {
           <View style = {styles.con_post}>
             <View style = {styles.post_prof_pic}>
               <Image source={require('../media/user3.png')}
-              style={{width: 50, height: 50}}/>
+              style={styles.avatarimage}/>
             </View>
             <View style = {styles.wiad}>
               <View style = {styles.post_header}>
@@ -66,7 +66,7 @@ export default function Posts() {
           <View style = {styles.con_post}>
           <View style = {styles.post_prof_pic}>
               <Image source={require('../media/user1.png')}
-              style={{width: 50, height: 50}}/>
+              style={styles.avatarimage}/>
             </View>
             <View style = {styles.wiad}>
               <View style = {styles.post_header}>
@@ -90,7 +90,6 @@ export default function Posts() {
               </View>
             </View>
           </View>
-
           {/* <Api/> */}
         </ScrollView>
     )
@@ -121,11 +120,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
         marginTop: 1,
-        marginLeft: 3,
-        // borderWidth: 2,
-        // borderRadius: 60,
-
-        //Piotrek
+        marginLeft: 4,
         borderColor: 'white',
         shadowColor: "#000",
         shadowOffset: {
@@ -135,13 +130,23 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
       },
+      avatarimage: {
+        borderColor:'white',
+        borderRadius: 500,
+        borderWidth:1,
+        width: 50,
+        height: 50,
+    },
       post_header: {
         padding: 5,
       },
       header_content: {
         fontSize: 18,
-        borderBottomColor: '#121212',
-        borderBottomWidth: 1
+        borderColor: 'white',
+        borderRadius: 5,
+        padding: 2,
+        borderWidth: 1,
+        backgroundColor: '#06446b',
       },
       post_content: {
         paddingHorizontal: 5,
@@ -165,8 +170,6 @@ const styles = StyleSheet.create({
         borderRadius: 60,
         borderColor: 'white',
         margin: 5,
-
-        //Piotrek
         width: 25,
         height: 25,
         padding: 3
@@ -177,8 +180,6 @@ const styles = StyleSheet.create({
         borderRadius: 60,
         borderColor: '#003d76',
         margin: 5,
-
-        //Piotrek
         width: 25,
         height: 25,
         padding: 3

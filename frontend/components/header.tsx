@@ -1,10 +1,11 @@
-import { StyleSheet, View, Text, SafeAreaView, Image, TouchableOpacity, Button } from 'react-native'
+import { StyleSheet, View, Image, TouchableOpacity, Button } from 'react-native'
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHouse, faBell, faEnvelope, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
-
+import { useNavigation } from '@react-navigation/native'
 
 export default function head() {
+  const navigation = useNavigation();
     return (
         <View>
             <View style = {styles.top_container}>
@@ -12,21 +13,27 @@ export default function head() {
                 style={{width: 200, height: 40}}
                 />
                     <View style = {styles.lupka}>
-                      <FontAwesomeIcon icon={faMagnifyingGlass} size={24} color="white"/>
+                      <FontAwesomeIcon icon={faMagnifyingGlass} size={28} color="white"/>
                     </View>
                     <View style = {styles.profil}>
-                      <FontAwesomeIcon icon={faUser} size={24} mask="circle" color="white"/>
+                      <FontAwesomeIcon icon={faUser} size={28} mask="circle" color="white"/>
                     </View>
                 </View>
                 <View style = {styles.con_zakladki}>
                     <View  style = {[styles.zakladki_home, styles.zakladki]}>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('Home');}}>
                       <FontAwesomeIcon icon={faHouse} size={24} color="white"/>
+                    </TouchableOpacity>
                     </View>
                 <View style = {[styles.zakladki_notifications, styles.zakladki]}>
+                <TouchableOpacity onPress={()=>{navigation.navigate('Notifications');}}>
                   <FontAwesomeIcon icon={faBell} size={24} color="white"/>
+                  </TouchableOpacity>
                 </View>
                 <View style = {[styles.zakladki_mail, styles.zakladki]}>
-                <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
+                <TouchableOpacity onPress={()=>{navigation.navigate('News');}}>
+                  <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
+                  </TouchableOpacity>
                 </View>
             </View>
         </View>
@@ -35,10 +42,10 @@ export default function head() {
 
 const styles = StyleSheet.create({
     // górna część apki
-  top_container: {
+    top_container: {
     flexDirection: 'row',
     paddingHorizontal: 10,
-    marginTop: 2,
+    marginTop: 4,
     height: 50,
     width: '100%',
   },
@@ -48,18 +55,16 @@ const styles = StyleSheet.create({
       letterSpacing: 1,
   },
   lupka: {
-    backgroundColor: 'green',
     right : 0,
-    width: 50,
     position: 'absolute',
-    marginRight: '5%' 
+    marginRight: 40,
+    marginTop: 2
   },
   profil: {
     position: 'absolute',
-    backgroundColor: 'green',
-    width: 50,
     right : 0,
-    marginRight: '1%' 
+    marginRight: 1,
+    marginTop: 2
   },
   con_zakladki: {
     flexDirection: 'row',
@@ -74,7 +79,6 @@ const styles = StyleSheet.create({
   zakladki_home: {
     borderBottomColor: 'blue',
     borderBottomWidth: 3
-
   },
   zakladki_notifications: {
     borderBottomColor: 'white',

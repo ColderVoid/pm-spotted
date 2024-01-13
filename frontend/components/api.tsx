@@ -1,7 +1,7 @@
 import React, { useEffect, useState} from 'react';
-import  { FlatList, Image, SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native';
+import  { Image, StyleSheet, Text, View, } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import { faThumbsUp, faComment, faEllipsis, faHeart} from '@fortawesome/free-solid-svg-icons'
+import { faComment, faEllipsis, faHeart} from '@fortawesome/free-solid-svg-icons'
 
 
 const ip = "192.168.1.52" //IP adress of backend
@@ -105,7 +105,6 @@ const styles = StyleSheet.create({
   wiad: {
     marginLeft: 10,
     marginRight: 5,
-    borderColor: 'white',
     borderWidth: 1,
     borderRadius: 10,
     width: '80%',
