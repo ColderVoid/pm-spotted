@@ -19,23 +19,6 @@ export default function head() {
                       <FontAwesomeIcon icon={faUser} size={28} mask="circle" color="white"/>
                     </View>
                 </View>
-                <View style = {styles.con_zakladki}>
-                    <View  style = {[styles.zakladki_home, styles.zakladki]}>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('Home');}}>
-                      <FontAwesomeIcon icon={faHouse} size={24} color="white"/>
-                    </TouchableOpacity>
-                    </View>
-                <View style = {[styles.zakladki_notifications, styles.zakladki]}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('Notifications');}}>
-                  <FontAwesomeIcon icon={faBell} size={24} color="white"/>
-                  </TouchableOpacity>
-                </View>
-                <View style = {[styles.zakladki_mail, styles.zakladki]}>
-                <TouchableOpacity onPress={()=>{navigation.navigate('News');}}>
-                  <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>
-                  </TouchableOpacity>
-                </View>
-            </View>
         </View>
     )
 }

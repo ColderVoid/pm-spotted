@@ -1,17 +1,18 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text, View, useColorScheme } from 'react-native'
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
 import Head from './components/header.tsx'
 import Post from './components/posts.tsx'
 import Notss from './components/notifications.tsx'
 import News from './components/news.tsx'
 import LoginScreen from './components/loginScreen.tsx'
 import SignupScreen from './components/signupScreen.tsx'
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { faHouse, faBell, faEnvelope, faMagnifyingGlass, faUser} from '@fortawesome/free-solid-svg-icons'
+import { icon } from '@fortawesome/fontawesome-svg-core'
 
-
-const Tab = createBottomTabNavigator();
+const Tab = createMaterialTopTabNavigator();
 
 export default function App(): JSX.Element {
   return (
@@ -21,17 +22,13 @@ export default function App(): JSX.Element {
         initialRouteName='Home'
         screenOptions={{
           tabBarShowLabel: false,
-          headerShown: false,
-          tabBarStyle: {
-            display: 'none',
-            
-          }}}>
-            
-          <Tab.Screen name="Home" component={HomeScreen}/>
-          <Tab.Screen name="Notifications" component={Nots}/>
-          <Tab.Screen name="Login" component={LoginScreen}/>
-          <Tab.Screen name="Signup" component={SignupScreen}/>
-          <Tab.Screen name="News" component={Newss}/>
+          tabBarStyle: {backgroundColor:'#333333'}
+          }}>
+          <Tab.Screen name="Home" options={{tabBarShowIcon: true, tabBarIcon: () => <FontAwesomeIcon icon={faHouse} size={24} color="white"/>}} component={HomeScreen}/>
+          <Tab.Screen name="Notifications" options={{tabBarShowIcon: true, tabBarIcon: () => <FontAwesomeIcon icon={faBell} size={24} color="white"/>}} component={Nots}/>
+          {/* <Tab.Screen name="Login"  component={LoginScreen}/> */}
+          {/* <Tab.Screen name="Signup" options={{tabBarShowIcon: true, tabBarIcon: () => }} component={SignupScreen}/> */}
+          <Tab.Screen name="News" options={{tabBarShowIcon: true, tabBarIcon: () => <FontAwesomeIcon icon={faEnvelope} size={24} color="white"/>}} component={Newss}/>
       </Tab.Navigator>
     </NavigationContainer>
   )
