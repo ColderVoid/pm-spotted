@@ -1,6 +1,7 @@
-import { SafeAreaView, StyleSheet, Text, View, Image, TextInput, TouchableOpacity, Switch } from 'react-native'
+import { Text, View, Image, TextInput, TouchableOpacity, Switch } from 'react-native'
 import React, {useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
+import { styles } from './style'
 
 const logoImgUrl = '../media/LOGOO.png'
 const atSignImgUrl = '../media/MALPLA.png'
@@ -17,7 +18,7 @@ export default function LoginScreen() {
     const [isEnabled, setIsEnabled] = useState(false);
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
     return(
-    <View style={styles.backgroundContainer}>
+        <View style = {styles.backgroundContainer}>
         <View style={styles.mainContainer}>
             <View style={styles.imgFlexbox}>
                 <Image source={require(logoImgUrl)} style={styles.logoImg}/>
@@ -82,151 +83,3 @@ export default function LoginScreen() {
         </View>
     );
 }
-const styles = StyleSheet.create({
-    backgroundContainer:{
-        backgroundColor: '#11141D',
-    },
-    mainContainer:{
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        marginLeft: '5%',
-        marginRight: '5%',
-        width: '80%',
-        height: '100%',
-        backgroundColor: '#11141D',
-    },
-    imgFlexbox: {
-        flex: 8,
-        width:'100%',
-    },
-    logoImg:{
-        flex: 1,
-        width:'100%',
-    },
-    switchSignOptionBox:{
-        flex: 1,
-        flexDirection: 'row',
-        width: '100%',
-    },
-    switchSignOptionSubBoxSelected:{
-        flex: 1,
-        borderBottomWidth: 5,
-        borderBottomColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    switchSignOptionSubBoxUnselected:{
-        flex: 1,
-        borderBottomWidth: 2,
-        borderBottomColor: 'white',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    signLabels:{
-
-    },
-    loginRegisterSection: {
-        flex: 10,
-        width: '100%',
-    },
-    inputOuterFlexbox:{
-        height: 150,
-        width: '100%',
-        marginBottom: 10,
-    },
-    inputInnerBox:{
-        height: 60,
-        flexDirection: 'row',
-        borderWidth: 1,
-        borderRadius: 20,
-        borderColor: 'white',
-        padding: 20,
-        width:'100%',
-        marginTop: 20,
-    },
-    inputLeftSign:{
-        width: 40,
-        height:40,
-    },
-    inputRightSign:{
-        width: 40,
-        height:40,
-    },
-    inputText:{
-
-    },
-    rememberOuterBox:{
-        flex: 1,
-        width: '100%',
-        flexDirection: 'row',
-        marginBottom: 5,
-        marginTop: 20,
-    },
-    rememberInnerBox:{
-        flex: 1,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-    },
-    rememberText:{
-
-    },
-    switchButton:{
-        width: 50,
-        alignItems: 'flex-start',
-        justifyContent: 'center',
-    },
-    forgetInnerBox:{
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        flex: 1,
-    },
-    forgetText:{
-        textDecorationLine: 'underline',
-    },
-    LoginBox:{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor:'#D1722A',
-        width:'100%',
-        borderRadius: 10,
-    },
-    loginLabel:{
-
-    },
-    loginOptionBox:{
-        flex:1,
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    leftLine:{
-        flex: 1, 
-        height: 1, 
-        backgroundColor: 'white',
-    },
-    loginOptionLabel:{
-        width: 'auto',
-        marginLeft:10, 
-        marginRight:10, 
-        textAlign: 'center',
-    },
-    rightLine:{
-        flex: 1, 
-        height: 1, 
-        backgroundColor: 'white',
-    },
-    loginOptionIconBox:{
-        width: '100%',
-        flex: 2,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    loginImg: {
-        height: 50,
-        width: 50,
-        marginRight:10,
-        marginLeft:10,
-    },
-})
