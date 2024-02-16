@@ -3,7 +3,7 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import UserViewSet, PostViewSet, CommentViewSet
+from .views import UserViewSet, PostViewSet, CommentViewSet, checkCreds
 
 router = routers.DefaultRouter()
 router.register(r'users', UserViewSet, basename="users")
@@ -12,6 +12,7 @@ router.register(r'comments', CommentViewSet, basename="comments")
 
 urlpatterns = [
     path('', include(router.urls)),
+    path('checkcreds', checkCreds, name="checkcreds")
 ]
 
 if settings.DEBUG:

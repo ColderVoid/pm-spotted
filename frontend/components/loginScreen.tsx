@@ -2,6 +2,7 @@ import { Text, View, Image, TextInput, TouchableOpacity, Switch } from 'react-na
 import React, {useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { styles } from './style'
+import { encode } from 'base-64'
 
 const logoImgUrl = '../media/LOGOO.png'
 const atSignImgUrl = '../media/MALPLA.png'
@@ -16,7 +17,31 @@ export default function LoginScreen() {
     const [isFocuseda, setFocuseda] = useState(false);
     const [isFocusedb, setFocusedb] = useState(false);
     const [isEnabled, setIsEnabled] = useState(false);
+
+    const initialState = {
+        username: "",
+        password: "",
+    }
+
+    const [credentials, setInputs] = useState(initialState);
+
+    const handleOnchange = (text: string, input: string) => {
+        setInputs(prevState => ({...prevState, [input]: text}));
+      };
+      
+
     const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+    const handleButtonPress = () => {
+        const ip = "192.168.1.52" //IP adress of backend
+        const port = "8000" //Port of backend
+        const api_username = encode(credentials.username)
+        const api_password = encode(credentials.password)
+
+        fetch(`http://${ip}:${port}/checkcreds?username=${api_username}&password=${api_password}`)
+            .then(response => response.text())
+            .then(data => {console.log(data)})};
+      
     return(
         <View style = {styles.backgroundContainer}>
         <View style={styles.mainContainer}>
@@ -33,8 +58,13 @@ export default function LoginScreen() {
                 </View>
                 <View style={styles.loginRegisterSection}>
                     <View style={styles.inputOuterFlexbox}>
-                        <TextInput placeholder='Twój mail' onFocus={() => setFocuseda(true)} onBlur={() => setFocuseda(false)} style={[styles.inputInnerBox, {borderColor: isFocuseda ? '#D1722A' : 'white'}]}/>
-                        <TextInput placeholder='Hasło' onFocus={() => setFocusedb(true)} onBlur={() => setFocusedb(false)} style={[styles.inputInnerBox, {borderColor: isFocusedb ? '#D1722A' : 'white'}]}/>
+                        <TextInput 
+                            placeholder='Twój mail'
+                            onChangeText={text => handleOnchange(text, 'username')} 
+                            onFocus={() => setFocuseda(true)} onBlur={() => setFocuseda(false)}
+                            style={[styles.inputInnerBox, {borderColor: isFocuseda ? '#D1722A' : 'white'}]}/>
+
+                        <TextInput placeholder='Hasło' onChangeText={text => handleOnchange(text, 'password')} onFocus={() => setFocusedb(true)} onBlur={() => setFocusedb(false)} style={[styles.inputInnerBox, {borderColor: isFocusedb ? '#D1722A' : 'white'}]}/>
                     </View>
                     <View style={styles.rememberOuterBox}>
                         <Switch
@@ -55,7 +85,7 @@ export default function LoginScreen() {
                             <Text style={styles.forgetText}>Zapomniałem hasła?</Text>
                         </View>
                     </View>
-                    <TouchableOpacity style={styles.LoginBox} onPress={()=>{navigation.navigate('Home');}}>
+                    <TouchableOpacity style={styles.LoginBox} onPress={handleButtonPress}>
                         <Text style={styles.loginLabel}>
                             Login
                         </Text>
