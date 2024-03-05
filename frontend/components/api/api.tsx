@@ -2,9 +2,9 @@ import React, { useEffect, useState} from 'react';
 import  { Image, Text, View, } from 'react-native';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faComment, faEllipsis, faHeart} from '@fortawesome/free-solid-svg-icons'
-import { styles } from './style'
+import { styles } from './apiStyle.tsx'
 
-const ip = "192.168.1.52" //IP adress of backend
+const ip = "192.168.0.94" //IP adress of backend
 const port = "8000" //Port of backend
 
 const Posts = () => {

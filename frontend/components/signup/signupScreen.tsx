@@ -1,15 +1,15 @@
 import {  Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
 import React, {useState} from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { styles } from './style'
+import { styles } from '../style'
 
-const logoImgUrl = '../media/LOGOO.png'
-const atSignImgUrl = '../media/MALPLA.png'
-const lockSignImgUrl = '../media/KLODKA.png'
-const eyeSignImgUrl = '../media/OKO.png'
-const FacebookImgUrl = '../media/fb.png'
-const GoogleImgUrl = '../media/google.png'
-const AppleImgUrl = '../media/APPLE.png'
+const logoImgUrl = '../../media/LOGOO.png'
+const atSignImgUrl = '../../media/MALPLA.png'
+const lockSignImgUrl = '../../media/KLODKA.png'
+const eyeSignImgUrl = '../../media/OKO.png'
+const FacebookImgUrl = '../../media/fb.png'
+const GoogleImgUrl = '../../media/google.png'
+const AppleImgUrl = '../../media/APPLE.png'
 
 export default function SignupScreen() {
     const navigation = useNavigation();

@@ -1,16 +1,16 @@
 import { View, Text, ScrollView, Image } from 'react-native'
 import React from 'react'
-import Api from './api.tsx'
+import Api from '../api/api.tsx'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 import { faHeart, faComment, faEllipsis} from '@fortawesome/free-solid-svg-icons'
-import { styles } from './style'
+import { styles } from '../style.tsx'
 
 export default function Posts() {
     return (
         <ScrollView style= {{backgroundColor:'#262626'}}>
           <View style = {styles.con_post1}>
           <View style = {styles.post_prof_pic1}>
-              <Image source={require('../media/user2.png')}
+              <Image source={require('../../media/user2.png')}
               style={styles.avatarimage1}/>
             </View>
             <View style = {styles.wiad1}>
@@ -38,7 +38,7 @@ export default function Posts() {
 
           <View style = {styles.con_post1}>
             <View style = {styles.post_prof_pic1}>
-              <Image source={require('../media/user3.png')}
+              <Image source={require('../../media/user3.png')}
               style={styles.avatarimage1}/>
             </View>
             <View style = {styles.wiad1}>
@@ -66,7 +66,7 @@ export default function Posts() {
 
           <View style = {styles.con_post1}>
           <View style = {styles.post_prof_pic1}>
-              <Image source={require('../media/user1.png')}
+              <Image source={require('../../media/user1.png')}
               style={styles.avatarimage1}/>
             </View>
             <View style = {styles.wiad1}>
@@ -91,7 +91,7 @@ export default function Posts() {
               </View>
             </View>
           </View>
-          {/* <Api/> */}
+          <Api/>
         </ScrollView>
     )
 }

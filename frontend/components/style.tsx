@@ -394,6 +394,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
+        backgroundColor: 'white'
       },
       post_prof_pic1: {
         height: 50,
@@ -493,5 +494,7 @@ const styles = StyleSheet.create({
         marginTop:20,
     },
 })
+
+
 
 export { styles }
