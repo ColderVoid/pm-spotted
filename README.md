@@ -22,14 +22,7 @@ Wymagania Systemowe
 ----
 Twórcy
 ----
-* Alicja Wasilewska
-* Felix Łubiński
-* Jakub Kobuszewski
-* Kacper Siniecki
-* Mikołaj Mołodecki
-* Patryk Piaścik
-* Rostyslav Polishchuk
-* The GOAT Piort Wittig
+* Jakub Szubartowski
 
 --------
 Kontakt
